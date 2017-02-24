@@ -1,0 +1,40 @@
+{
+  "name": "node-jamesjames",
+  "version": "1.0.0",
+  "description": "This is a Node.js warpper that will allow you to hook to the James & James Warehouse API Endpoints. This warpper is bases on API Version 1.13 Specs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yonib05/node-jamesjames.git"
+  },
+  "keywords": [
+    "node",
+    "sixworks",
+    "control port",
+    "James & James",
+    "James and James",
+    "ecommercefulfilment.com",
+    "ecommerce fulfilment",
+    "fulfillment service",
+    "fulfillment api"
+  ],
+  "author": "@yonib05 @hickies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yonib05/node-jamesjames/issues"
+  },
+  "homepage": "https://github.com/yonib05/node-jamesjames",
+  "dependencies": {
+    "jayschema": "^0.3.1",
+    "request": "^2.79.0",
+    "underscore": "^1.8.3",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "should": "^11.2.0"
+  }
+}
