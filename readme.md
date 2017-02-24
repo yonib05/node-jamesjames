@@ -26,8 +26,7 @@ The settings object could contain these properties:
       },
       debugLogs: false  // Only use it during development 
     }
-Recommended to use a local Wsdl file, think what would happen if your server restart in a moment when the remote WSDL server is not online. It will never get connected!
-One caveat I think on this subject is, if  ProLog company decides to change specification, the local file has no way to know this happened. The remote way is no a total warranty neither as all this connector would fail anyway if they introduce several changes in the future.
+
 
 ----------
 
