@@ -1,3 +1,1 @@
-/**
- * Created by yoni on 2/24/17.
- */
+module.exports = require('./lib/warehouse');
