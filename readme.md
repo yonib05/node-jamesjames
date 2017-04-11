@@ -107,3 +107,7 @@ var order = {
  - Error Object or *null* --> Note: Albeit the error object contains validation error info, it is not normalized therefore is not suitable to client side validation, suggested a client side validation
  - Result Object ( an object representing the raw response from the service intended) 
  
+ 
+ 
+ 
+ Note: Tests will fail unless you replace with valid apikey and client ref for products
