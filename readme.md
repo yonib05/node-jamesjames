@@ -1,9 +1,9 @@
-Node-SaddleCreek
+Node-JamesJames
 ===================
 #### Sixworks/Controlport Rest API Wrapper
-This is a Node.js Module will allow you to hook into James & James's Fulfillment API Endpoint this is based on order api specs V 1.13 
+This is a Node.js Module will allow you to hook into James & James's Fulfillment API Endpoint this is based on [order api specs V 1.13](https://docs.google.com/spreadsheets/d/1dTDoilb_tvcMZXyPWdo9B9WzmIpXf__v_G3aOFxarHw/pub?output=html#) 
 
-----------
+
 
 Setup
 -------
@@ -19,13 +19,16 @@ There two way for setting up the warehouse connector:
 
 The settings object could contain these properties:
 
-    { 
-      url: ''https://api.controlport.co.uk/api/1/',
-      credentials: {
-        api_key: 'xxxxxxxxx'
-      },
-      debugLogs: false  // Only use it during development 
-    }
+    {
+            url: 'https://api.controlport.co.uk/api/1/',
+            credentials: {
+                api_key: 'xxxxxxxxxxxx'
+            },
+            allow_preorder : false,
+            update_stock : false,
+            test : false,
+            debugLogs: false  // Only use it during development or testing
+        }
 
 
 ----------
@@ -106,6 +109,37 @@ var order = {
  Arguments passed: 
  - Error Object or *null* --> Note: Albeit the error object contains validation error info, it is not normalized therefore is not suitable to client side validation, suggested a client side validation
  - Result Object ( an object representing the raw response from the service intended) 
+ 
+ 
+ 
+ Example Response Object:
+ 
+ ```javascript
+
+var failResult = {
+                 "success": 0, //0 = false or 1 = true 
+                 "order_ref": "1234-5678",
+                 "error": ["An order with reference 1234-5678 has already been received on this channel."],
+                 "valid":  0,  //0 = false or 1 = true
+                 "test": 1  //0 = false or 1 = true 
+             };
+
+
+var successResult = {
+                 "success": 1, //0 = false or 1 = true 
+                 "order_ref": "1234-5678",
+                 "error": [],
+                 "client_area_link" : "https://client.controlport.co.uk/orders/12345678",
+                 "warehouse_tracking_link" : "http://www.ecommercefulfilment.com/track/123456789/abcdef",
+                 "update_stock" : 0, //0 = false or 1 = true  (only if update stock in request true)
+                 "last_order_placed" : "2010-12-30 23:59:59", // (only if update stock in request true)
+                 "stock_changes" : [{"prod1": 200}, {"prod2": 400}], // (only if update stock in request true)
+                 "valid": 1, //0 = false or 1 = true 
+                 "test": 1  //0 = false or 1 = true 
+             };
+
+
+```
  
  
  

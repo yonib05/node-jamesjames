@@ -11,7 +11,7 @@ var warehouse = require('../lib/warehouse').settings({
     allow_preorder: false,
     update_stock: false,
     test: true,
-    debugLogs: true  // Only use it during development or testing
+    debugLogs: false  // Only use it during development or testing
 });
 
 var sampleOrder = {
