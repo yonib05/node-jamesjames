@@ -1,6 +1,6 @@
 {
   "name": "node-jamesjames",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This is a Node.js warpper that will allow you to hook to the James & James Warehouse API Endpoints. This warpper is bases on API Version 1.13 Specs",
   "main": "index.js",
   "scripts": {
