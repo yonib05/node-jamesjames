@@ -67,7 +67,7 @@ var order = {
         "name": "David Test", //Required  Type:string(64)
         "company": "Demo Ltd", //Type:string(64)
         "email": "david@demo.co.uk", //Required  Type:string(32) - Must be a vaild email
-        "phone": "01234 567 890	", //Required  Type:string(32)
+        "phone": "01234 567 890	", //  Type:string(32)
         "address": "1 Road Street", //Required  Type:string(32)
         "address_contd": "off Avenue Lane", //Required  Type:string(32)
         "city": "Teston", //Required  Type:string(32)
@@ -80,7 +80,7 @@ var order = {
         "name": "Vera Test", //Required  Type:string(64)
         "company": "", //Type:string(64)
         "email": "vera@home.com", //Required  Type:string(32) - Must be a vaild email
-        "phone": "01234 567 890	", //Required  Type:string(32)
+        "phone": "01234 567 890	", //  Type:string(32)
         "address": "1 Road Street", //Required  Type:string(32)
         "address_contd": "off Avenue Lane", //Required  Type:string(32)
         "city": "Teston", //Required  Type:string(32)
