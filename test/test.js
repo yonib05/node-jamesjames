@@ -1,12 +1,19 @@
 /**
  * Created by yoni on 2/24/17.
  */
+var testConfig = require('./config');
 var should = require('should');
+
+
+var YOUR_API_KEY =  testConfig.API_KEY || "3cac28674ca5c525af980b3cd92e9245";
+var YOUR_CLIENT_REF_PRODUCT_1 = testConfig.PRODUCT_1 || "ABC-0001";
+var YOUR_CLIENT_REF_PRODUCT_2 = testConfig.PRODUCT_2 || "ABC-0002";
+
 
 var warehouse = require('../lib/warehouse').settings({
     url: 'https://api.controlport.co.uk/api/1/',
     credentials: {
-        api_key: '3cac28674ca5c525af980b3cd92e9245' /* use your own api key this is a dummy and will fail the test */
+        api_key: YOUR_API_KEY /* use your own api key this is a dummy and will fail the test */
     },
     allow_preorder: false,
     update_stock: false,
@@ -18,7 +25,7 @@ var sampleOrder = {
     "client_ref": "Order" + Math.floor(Math.random() * 9999999),
     "po_number": "CustomerPONumber1",
     "date_placed": "2017-04-11T23:04:57+00:00",
-    "postage_speed": 0,
+    "postage_speed": 3,
     "allow_saturday": false,
     "signed_for": false,
     "no_signature": true,
@@ -58,12 +65,12 @@ var sampleOrder = {
         "country": "United Kingdom"
     },
     "items": [{
-        "client_ref": "ABC-0001", /* use your own client ref this is a dummy and will fail the test */
+        "client_ref": YOUR_CLIENT_REF_PRODUCT_1, /* use your own client ref this is a dummy and will fail the test */
         "quantity": 3,
         "price": 10.99,
         "days_before_bbe": 90
     }, {
-        "client_ref": "ABC-0002",
+        "client_ref": YOUR_CLIENT_REF_PRODUCT_2,
         "quantity": 1,
         "price": 4.5
     }]
@@ -77,6 +84,7 @@ describe('Warehouse.createOrder', function () {
     describe('#arguments(sampleOrder1, callback)', function () {
         it('should return success message or error message that order has been created', function (done) {
             warehouse.createOrder(sampleOrder, function (err, results) {
+                console.log(err, results);
                 if (err) return done(err);
                 else {
                     try {
